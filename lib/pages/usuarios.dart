@@ -12,7 +12,7 @@ class Usuarios extends StatefulWidget {
 class UsuariosState extends State<Usuarios> {
   /// Lista de objetos da classe Usuario
   List<Usuario> _lista = [];
-
+  
   @override
   void initState() {
     super.initState();
@@ -43,16 +43,21 @@ class UsuariosState extends State<Usuarios> {
     return Scaffold(
       appBar: AppBar(title: const Text("Usuários")),
       body: ListView.builder(
-        itemCount: _lista.length, // Tamanho da lista
-        // context: contexto da aplicação (tela atual)
-        // index: índice de cada item, iterado de 0 até n-1 (n = tamanho da lista)
         itemBuilder: (context, index) {
+          final id = 5;
+          final urlFoto = 'https://i.pravatar.cc/300?img=' + id.toString();
           return ListTile(
             leading: ClipOval(
-              child: Image.network(_lista[index].urlFoto),
+              child: Image.network(_lista[index].urlFoto)
             ),
             title: Text(_lista[index].nome),
-            subtitle: Text(_lista[index].email)
+            subtitle: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(_lista[index].email)
+              ]
+            )
+            // nome, telefone, e-mail 
           );
         }
       )

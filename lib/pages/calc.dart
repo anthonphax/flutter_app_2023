@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class Calc extends StatefulWidget {
   const Calc({super.key});
@@ -69,6 +70,36 @@ class CalcState extends State<Calc> {
                 });
               }
             ),
+            ElevatedButton(
+              child: const Text("Multiplicação"),
+              onPressed: () {
+                int n1 = int.parse(control1.text);
+                int n2 = int.parse(control2.text);
+                setState(() {
+                  myVar = (n1*n2).floor();
+                });
+              }
+            ),
+            ElevatedButton(
+              child: const Text("Divisão"),
+              onPressed: () {
+                int n1 = int.parse(control1.text);
+                int n2 = int.parse(control2.text);
+                setState(() {
+                  myVar = (n1/n2).floor();
+                });
+              }
+            ),
+            ElevatedButton(
+              child: const Text("Exponenciação"),
+              onPressed: () {
+                int n1 = int.parse(control1.text);
+                int n2 = int.parse(control2.text);
+                setState(() {
+                  myVar = pow(n1,n2).floor();
+                });
+              }
+            )
           ]
         ),
         Padding(

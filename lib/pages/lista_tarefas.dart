@@ -73,8 +73,10 @@ class ListaTarefasState extends State<ListaTarefas> {
                   initialTime: TimeOfDay.now()
                 );
                 if (pickedTime!=null) {
+                  String hour = pickedTime.hour.toString().padLeft(2, '0');
+                  String minute = pickedTime.minute.toString().padLeft(2, '0');
                   setState(() {
-                    horaControl.text = "${pickedTime.hour}:${pickedTime.minute}";
+                    horaControl.text = "$hour:$minute";
                   });
                 }
               },

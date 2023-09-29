@@ -15,7 +15,7 @@ class HomeState extends State<Home> {
   void initState() {
     super.initState();
     Timer(
-      const Duration(seconds: 3),
+      const Duration(seconds: 2),
       () {
         Navigator.pop(context);
         Navigator.push(
@@ -40,8 +40,8 @@ class HomeState extends State<Home> {
           color: Colors.black87,
           gradient: LinearGradient(
             colors: [
-              Colors.deepPurple,
-              Colors.blueAccent,
+              Colors.green,
+              Colors.greenAccent,
               Colors.cyanAccent
             ],
             begin: Alignment.topLeft,
